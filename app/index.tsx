@@ -53,6 +53,7 @@ import DeleteFarmer from "@/component/DeleteFarmer";
 import UserFeedback from "@/component/UserFeedback";
 import { useNavigation } from "@react-navigation/native";
 import { BackHandler } from "react-native";
+import AreaSelectionScreen from "@/component/AreaSelectionScreen";
 LogBox.ignoreAllLogs(true);
 NativeWindStyleSheet.setOutput({
   default: "native",
@@ -166,6 +167,7 @@ const Index = () => {
         <Stack.Screen name="DeleteFarmer" component={DeleteFarmer as any} />
         <Stack.Screen name="UserFeedback" component={UserFeedback as any} />
         <Stack.Screen name="ComplainForm" component={ComplainForm} />
+        <Stack.Screen name="AreaSelection" component={AreaSelectionScreen} />
 
         <Stack.Screen name='Main' component={MainTabNavigator} options={{ headerShown: false }} />
 

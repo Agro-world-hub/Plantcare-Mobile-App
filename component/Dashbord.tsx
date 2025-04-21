@@ -195,9 +195,9 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
 
   const dynamicStyles = {
     imageSize: screenWidth < 400 ? wp(6) : wp(8),
-    buttonWidth: screenWidth < 400 ? wp(38) : wp(35),
-    buttonHeight: screenWidth < 400 ? wp(28) : wp(28),
-    iconSize: screenWidth < 400 ? 40 : 50,
+    buttonWidth: screenWidth < 400 ? wp(40) : wp(35),
+    buttonHeight: screenWidth < 400 ? wp(40) : wp(35),
+    iconSize: screenWidth < 400 ? 80 : 50,
     textSize: screenWidth < 400 ? 14 : 14,
     paddingTopSlideshow: screenWidth < 400 ? 80 : 80,
     slideShowTitleSize: screenWidth < 400 ? 15 : 20,
@@ -372,7 +372,7 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
             <TouchableOpacity
               style={{
                 borderRadius: 10,
-                backgroundColor: "#26D041",
+                boxShadow: "0px 0px 10px #445F4A33",
                 width: dynamicStyles.buttonWidth,
                 height: dynamicStyles.buttonHeight,
                 marginLeft: 20,
@@ -382,14 +382,11 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
               }}
             >
               <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+              className="flex-1 justify-center items-center "
+    
               >
                 <Image
-                  source={require("../assets/images/Sales Performance.webp")}
+                  source={require("../assets/images/assets.webp")}
                   style={{
                     width: dynamicStyles.iconSize,
                     height: dynamicStyles.iconSize,
@@ -398,9 +395,7 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
                 />
                 <Text
                   style={{
-                    marginTop: 15,
-
-                    color: "white",
+                    marginTop: 10,
                     fontSize: dynamicStyles.textSize,
                   }}
                 >
@@ -412,7 +407,7 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
             <TouchableOpacity
               style={{
                 borderRadius: 10,
-                backgroundColor: "#26D041",
+                boxShadow: "0px 0px 10px #445F4A33",
                 width: dynamicStyles.buttonWidth,
                 height: dynamicStyles.buttonHeight,
                 marginRight: 20,
@@ -428,7 +423,7 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
                 }}
               >
                 <Image
-                  source={require("../assets/images/whether fill w.webp")}
+                  source={require("../assets/images/weather.webp")}
                   style={{
                     width: dynamicStyles.iconSize,
                     height: dynamicStyles.iconSize,
@@ -437,15 +432,65 @@ const Dashboard: React.FC<DashboardProps> = ({ navigation }) => {
                 />
                 <Text
                   style={{
-                    marginTop: 5,
-                    color: "white",
+                    marginTop: 10,
                     fontSize: dynamicStyles.textSize,
                   }}
                 >
                   {t("Dashboard.weather")}
                 </Text>
               </View>
+              
             </TouchableOpacity>
+            
+          </View>
+
+          <View
+            className=""
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 25,
+              marginTop: 5,
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                borderRadius: 10,
+                boxShadow: "0px 0px 10px #445F4A33",
+                width: dynamicStyles.buttonWidth,
+                height: dynamicStyles.buttonHeight,
+                marginLeft: 20,
+              }}
+              onPress={() => {
+                navigation.navigate("AreaSelection");
+              }}
+            >
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Image
+                  source={require("../assets/images/area.webp")}
+                  style={{
+                    width: dynamicStyles.iconSize,
+                    height: dynamicStyles.iconSize,
+                  }}
+                  resizeMode="contain"
+                />
+                <Text
+                  style={{
+                    marginTop: 10,
+                    fontSize: dynamicStyles.textSize,
+                  }}
+                >
+                  {t("Area")}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            
           </View>
         </ScrollView>
       </ImageBackground>

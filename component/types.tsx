@@ -106,6 +106,7 @@ export type RootStackParamList = {
 
   DeleteFarmer: undefined;
   UserFeedback: undefined;
+  AreaSelection: undefined;
 };
 
 type MainTabParamList = {
